@@ -1,65 +1,135 @@
-# Netflix-Analysis
+# Netflix Data Analysis 📺
 
-# Netflix Dataset Analysis
+Exploratory Data Analysis (EDA) on the Netflix Movies and TV Shows dataset using Python and Jupyter Notebooks. This project uncovers content trends, geographic distribution, genre evolution, and release patterns across Netflix's catalog.
 
-This repository contains a comprehensive exploratory data analysis (EDA) of the Netflix dataset. The analysis aims to uncover trends, patterns, and insights into the content available on Netflix, including distribution of content types, ratings, release trends over years, and geographical content production.
+---
 
-## Table of Contents
+## 📊 Dataset
 
-1.  [Project Overview](#project-overview)
-2.  [Dataset](#dataset)
-3.  [Analysis Steps](#analysis-steps)
-4.  [Key Findings](#key-findings)
-5.  [Setup and Usage](#setup-and-usage)
+**Source:** [Netflix Movies and TV Shows on Kaggle](https://www.kaggle.com/datasets/shivamb/netflix-shows)  
+**Records:** ~8,800 titles  
+**Features:** show_id, type, title, director, cast, country, date_added, release_year, rating, duration, listed_in (genres), description
 
-## Project Overview
+---
 
-This project delves into the Netflix content library using Python's pandas, matplotlib, and seaborn libraries. We perform data cleaning, handle missing values, and then visualize various aspects of the dataset to gain a better understanding of Netflix's content strategy and evolution over time.
+## 🎯 Analysis Objectives
 
-## Dataset
+- Content type distribution (Movies vs TV Shows)
+- Geographic content production & availability
+- Genre trends over time
+- Release year vs. date added patterns
+- Rating distributions
+- Top directors, actors, and countries
+- Duration analysis (movies: minutes, TV shows: seasons)
 
-The dataset used for this analysis is `netflix_titles.csv`, which contains information about movies and TV shows available on Netflix. It includes columns such as `show_id`, `type`, `title`, `director`, `cast`, `country`, `date_added`, `release_year`, `rating`, `duration`, `listed_in` (genres), and `description`.
+---
 
-## Analysis Steps
+## 🛠️ Tech Stack
 
-The analysis covered the following key steps:
+| Tool | Purpose |
+|------|---------|
+| `Python 3.10+` | Core language |
+| `Pandas` | Data manipulation & cleaning |
+| `NumPy` | Numerical operations |
+| `Matplotlib` | Static visualizations |
+| `Seaborn` | Statistical visualizations |
+| `Plotly` | Interactive charts |
+| `Jupyter Notebook` | Development environment |
 
-1.  **Data Loading & Initial Inspection**: Loaded the CSV into a pandas DataFrame and examined its basic structure and information.
-2.  **Data Preprocessing & Cleaning**:
-    *   Removed entries with 'min' in the 'rating' column (likely duration information).
-    *   Handled missing values in `director`, `cast`, `country`, `date_added`, `rating`, and `duration` columns through imputation (filling with 'unknown', 'not available', or mode).
-    *   Checked for and confirmed the absence of duplicate rows.
-    *   Cleaned string data by trimming whitespace and converting all text to lowercase for consistency.
-3.  **Exploratory Data Analysis & Visualization**:
-    *   **Content Type Distribution**: Visualized the proportion of movies versus TV shows.
-    *   **Content Rating Distribution**: Explored the distribution of content ratings using a pie chart.
-    *   **Release Trends Over Years**: Analyzed the number of releases annually to identify growth patterns.
-    *   **Duration Distribution**: Illustrated the distribution of content durations (both movies and TV shows).
-    *   **Top 10 Countries by Content Production**: Identified and visualized countries with the highest content contributions.
-    *   **Movie and TV Show Releases vs. Years**: Separately tracked the annual release trends for movies and TV shows.
+---
 
-## Key Findings
+## 📁 Project Structure
 
-*(This section can be populated with specific insights you gained from your analysis after reviewing the generated plots. For example:)*
+```
+Netflix-Analysis/
+├── data/
+│   └── netflix_titles.csv
+├── notebooks/
+│   ├── 01_data_cleaning.ipynb
+│   ├── 02_exploratory_analysis.ipynb
+│   ├── 03_visualizations.ipynb
+│   └── 04_insights_summary.ipynb
+├── src/
+│   ├── utils.py
+│   └── visualizations.py
+├── outputs/
+│   ├── charts/
+│   └── reports/
+├── requirements.txt
+└── README.md
+```
 
-*   Netflix has a higher volume of movies compared to TV shows.
-*   The platform primarily features content with `TV-MA` and `TV-14` ratings.
-*   There has been a significant increase in content releases, particularly in the last decade, with a peak around 2018-2020.
-*   The United States is overwhelmingly the top contributor of content, followed by India and the UK.
-*   While movie releases peaked and have slightly declined recently, TV show production has shown a more consistent upward trend.
+---
 
-## Setup and Usage
+## 🚀 Getting Started
 
-To run this analysis, you will need a Python environment with the following libraries installed:
+### Prerequisites
 
-*   `pandas`
-*   `matplotlib`
+- Python 3.10+
+- pip / conda
 
-YouYou can install these using pip:
+### Installation
 
 ```bash
-pip install pandas matplotlib 
+git clone https://github.com/dineshreddypothula/Netflix-Analysis.git
+cd Netflix-Analysis
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Launch Jupyter
+jupyter notebook
 ```
 
-Once the dependencies are installed, you can open and run the `Netflix_Analysis.ipynb` notebook in a Jupyter environment (like Google Colab or Jupyter Notebook/Lab).
+### requirements.txt
+
+```txt
+pandas>=2.0
+numpy>=1.24
+matplotlib>=3.7
+seaborn>=0.12
+plotly>=5.15
+jupyter>=1.0
+notebook>=7.0
 ```
+
+---
+
+## 📈 Key Visualizations
+
+| Notebook | Charts |
+|----------|--------|
+| **01 Data Cleaning** | Missing value heatmap, duplicate analysis, type conversion |
+| **02 EDA** | Content type pie, release year histogram, top 10 countries bar, rating distribution |
+| **03 Visualizations** | Genre treemap, country choropleth, director network, duration boxplots, timeline area chart |
+| **04 Insights** | Executive summary dashboard with key metrics |
+
+---
+
+## 🔍 Key Findings (Preview)
+
+- **Movies dominate** (~70% of catalog) but TV Shows growing faster recently
+- **USA & India** lead content production; international content rising
+- **Drama, Comedy, Action** are top genres across all years
+- **2018-2021** saw explosive content acquisition
+- **TV-MA & TV-14** are most common ratings
+- **Median movie duration:** ~95 minutes; **Median TV show:** 1-2 seasons
+
+---
+
+## 📄 License
+
+MIT License — free to use and adapt.
+
+---
+
+## 👨‍💻 Author
+
+**Dinesh Reddy Pothula**  
+Data Analytics • Python • Visualization  
+
+[GitHub](https://github.com/dineshreddypothula) • [LinkedIn](https://www.linkedin.com/in/dinesh-reddy-pothula/)
